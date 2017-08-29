@@ -4,7 +4,7 @@ var farmAnimals = ["horse", "cow", "pig", "goat", "chicken", "sheep", "donkey", 
 
 var Hangman = {
     wordGuess: farmAnimals[Math.floor(Math.random() * farmAnimals.length)],
-    lives: 2,
+    lives: 5,
     isCurrentWord: false,
     guessedLetters: "",
     currentWord: "",
@@ -24,7 +24,7 @@ var Hangman = {
 
     reset: function() {
         Hangman.wordGuess = farmAnimals[Math.floor(Math.random() * farmAnimals.length)];
-        Hangman.lives = 2;
+        Hangman.lives = 5;
         Hangman.isCurrentWord = false;
         Hangman.guessedLetters = "";
         Hangman.currentWord = "";
@@ -73,8 +73,6 @@ document.onkeyup = function(event) {
         for (var i = 0; i < wordGuess.length; i++) {
             Hangman.currentWord = Hangman.currentWord + "_ ";
             Hangman.currentWordArray[i] = "_ ";
-
-
         }
         currentWordBlanks.textContent = Hangman.currentWord;
         Hangman.isCurrentWord = true;
@@ -86,9 +84,8 @@ document.onkeyup = function(event) {
             alert("Please enter an alphabet!");
 
         } else {
-            if (wordGuess.indexOf(event.key) === -1) {
+            if (wordGuess.indexOf(event.key) === -1 && Hangman.guessedLetters.indexOf(event.key)===-1) {
                 Hangman.decreaseLives();
-                
                 Hangman.guessedLetters = Hangman.guessedLetters + " " + event.key;
                 guessedLettersBlank.textContent = Hangman.guessedLetters;
                 livesBlank.textContent = Hangman.lives;
@@ -103,7 +100,7 @@ document.onkeyup = function(event) {
                         Hangman.newCurrentWord = Hangman.currentWordArray.join("");
                         currentWordBlanks.textContent = Hangman.newCurrentWord;
                         Hangman.checkWin();
-
+						guessedLettersBlank.textContent = Hangman.guessedLetters;
                     }
                 }
 

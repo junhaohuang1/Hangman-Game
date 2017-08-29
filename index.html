@@ -2,21 +2,29 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="assets/javascript/game.js"></script>
     <title>Hangman Game</title>
 </head>
 
 <body>
-    <h1>Farm Animal Hangman Game</h1>
-    <p>Press any key to start the game!</p>
-    <div>Current Word</div>
-    <br>
-    <div>Letters Already Guessed :<span id="guessed-letters-blank"> </span></div>
-    <br>
-    <div>Lives :<span id="lives-blank"> </span></div>
-    <br>
-    <div id="current-word"></div>
-    <br>
+    <div class="container">
+        <h1 class="Jumbotron page-header alert-success text-center">Farm Animal Hangman Game</h1>
+        <br>
+        <div class="row">
+        <p class ="col-md-3 col-xs-3">Press any key to start the game!</p>
+        <img src="assets/images/maxresdefault.jpg" class ="col-md-9 col-xs-9"><
+        </div>
+        <br>
+        <div>Letters Already Guessed :<span id="guessed-letters-blank"> </span></div>
+        <br>
+        <div >Lives :<span class ="alert-danger " id="lives-blank"> </span></div>
+        <br>
+        <div>Current Word</div>
+        <br>
+        <div id="current-word"></div>
+        <br>
+    </div>
 </body>
 
 </html>
